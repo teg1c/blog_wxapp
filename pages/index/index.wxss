@@ -1,0 +1,42 @@
+@import '/towxml/style/main.wxss';
+@import '/towxml/style/theme/light.wxss';
+@import '/towxml/style/theme/dark.wxss';
+/**index.wxss**/
+.title {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: #eeeeee;
+  padding: 5px;
+  font-size: 17px;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 16rpx;
+  box-sizing: border-box;
+} 
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
