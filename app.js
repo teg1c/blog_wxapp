@@ -1,5 +1,5 @@
 //app.js
-const Towxml = require('/towxml/main');     //引入towxml库
+const Towxml = require('/towxml/main');
 App({
   onLaunch: function () {
     
