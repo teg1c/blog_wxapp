@@ -1,42 +1,26 @@
-@import '/towxml/style/main.wxss';
-@import '/towxml/style/theme/light.wxss';
-@import '/towxml/style/theme/dark.wxss';
 /**index.wxss**/
-.title {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  background-color: #eeeeee;
-  padding: 5px;
-  font-size: 17px;
+.years{
+  height:34rpx ;
+  width: 750rpx;
+  line-height: 34rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #000000;
+  padding: 20rpx 0 15rpx 29rpx;
 }
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0rpx 16rpx;
-  box-sizing: border-box;
-} 
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.list-title{
+  font-size: 28rpx;
+  font-weight: 400;
+  padding: 8rpx 0 8rpx 58rpx;
+  line-height: 38rpx;
+  color: #353535;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.list{
+  background-color: rgba(0,0,0,.1);
+  /* color: rgb(26, 173, 22); */
 }
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.list-created{
+  font-size: 22rpx;
+  margin-left: 20rpx;
+  color: #b2b2b2;
 }
