@@ -1,7 +1,10 @@
-<view class="container">
-  <scroll-view scroll-y >
-    <li wx:for="{{blogData}}" wx:for-index="idx" wx:for-item="item" bindtap="openBlog" class='title' wx:key="{{item.id}}" data-id="{{item.id}}" data-title="{{item.title}}">
-       {{item.title}}
-    </li>
-  </scroll-view>
+<!-- 首页显示目录 -->
+<view class="content" hover-class="none" hover-stop-propagation="false">
+  <view wx:for="{{years}}" wx:for-index="index" wx:for-item="year" wx:key="year">
+    <view class="years">{{year}}</view>
+    <view wx:for="{{timeline[year]}}" wx:for-index="idx" wx:for-item="itemName"  wx:key="itemName"
+      class="list-title" data-id="{{blogData[itemName]['id']}}" bindtap="openBlog">
+        {{blogData[itemName]['title']}} <text class="list-created">{{blogData[itemName]['created_at']}}</text>
+    </view>
+  </view>
 </view>

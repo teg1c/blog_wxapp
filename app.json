@@ -5,7 +5,7 @@
     "pages/detail/detail"
   ],
   "window": {
-    "backgroundTextStyle": "white",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#262626",
     "navigationBarTitleText": "Tegic Blog",
     "navigationBarTextStyle": "white"

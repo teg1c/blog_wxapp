@@ -5,6 +5,8 @@ const app = getApp()
 Page({
     data: {
         blogData: {},
+        timeline: null, //存放时间和列表对应的数据
+        years: [], //所有年代数据
         dataSuccess: false,
         loading: true,
         requestUrl: null
@@ -47,7 +49,7 @@ Page({
                 wx.hideLoading()
                 wx.stopPullDownRefresh();
                 wx.hideNavigationBarLoading();
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.code == 400) {
                     that.setData({
                         dataSuccess: false,
@@ -61,12 +63,26 @@ Page({
                     return false;
                 }
                 //设置数据
+                let _data = res.data.data.data;
+                let json  = {}; // 根据时间划分数据
+                _data.forEach((value,index) => {
+                    let created_year = value.created_at.split("-",1)[0];
+                    if(json[created_year]){
+                        json[created_year].push(index);
+                    }else{
+                        json[created_year] = [index];
+                    }
+                });
+
                 _ts.setData({
-                    blogData: res.data.data.data,
+                    blogData: _data,
+                    timeline : json,
+                    years: Object.keys(json).sort().reverse(),
                     dataSuccess: true,
                     loading: false,
                     requestUrl: res.data.data.next_page_url
                 });
+
             }
         });
     },
