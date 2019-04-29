@@ -60,7 +60,37 @@
     }
     
     ```
+- 分类接口
+
+    请求接口[GET]
+     `https://URL/api/blog/cate?id={id} #如果没有id则返回所有分类`
     
+    返回参数
+    
+    ```json
+    {
+        "msg": "success",
+        "data": {
+            "id": 1,
+            "name": "php",
+            "article": [
+                {
+                    "id": 1,
+                    "title": "根据用户 id 生成一个唯一邀请码",
+                    "image": "images/e2c120f50a529bab3fb1eed937636a25.png",
+                    "read": 92,
+                    "created_at": "2019-03-07",
+                    "pivot": {
+                        "article_id": 1,
+                        "category_id": 1
+                    }
+                }
+            ]
+        },
+        "code": 200
+    }
+    
+    ```
 - 关于我接口
 
     请求接口[GET]
