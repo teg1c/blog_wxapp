@@ -158,7 +158,7 @@
      
      ```
 
-- 关于我接口
+- 发布评论
 
     请求接口[POST] 参数:article_id(文章id) 、reply_id(回复评论楼层id)、content（评论内容）
      `https://URL/api/blog/comment_post`
