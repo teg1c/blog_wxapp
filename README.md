@@ -91,6 +91,98 @@
     }
     
     ```
+ - 评论列表
+
+     请求接口[POST] 参数:id(文章id)
+      `https://URL/api/blog/comments`
+     
+     返回参数
+     
+     ```json
+     {
+         "msg": "success",
+         "data": {
+             "current_page": 1,
+             "data": [
+                 {
+                     "id": 2,
+                     "content": "还可以",
+                     "user_id": 7,
+                     "reply_id": 0,
+                     "like_count": 0,
+                     "time": "2019-05-06 14:32:37",
+                     "reply": [
+                         {
+                             "id": 3,
+                             "content": "还可以吧",
+                             "reply_id": 2,
+                             "user_id": 5,
+                             "time": "2019-05-06 14:35:29"
+                         },
+                         {
+                             "id": 4,
+                             "content": "还可以吧对不对",
+                             "reply_id": 2,
+                             "user_id": 6,
+                             "time": "2019-05-06 14:37:49"
+                         },
+                         {
+                             "id": 5,
+                             "content": "test",
+                             "reply_id": 2,
+                             "user_id": 1,
+                             "time": "2019-05-06 14:38:14"
+                         }
+                     ]
+                 },
+                 {
+                     "id": 1,
+                     "content": "asdad",
+                     "user_id": 0,
+                     "reply_id": 0,
+                     "like_count": 0,
+                     "time": "2019-05-06 14:30:02",
+                     "reply": []
+                 }
+             ],
+             "first_page_url": "https://URL/api/blog/comments?page=1",
+             "from": 1,
+             "next_page_url": null,
+             "path": "https://URL/api/blog/comments",
+             "per_page": 15,
+             "prev_page_url": null,
+             "to": 2
+         },
+         "code": 200
+     }
+     
+     ```
+
+- 关于我接口
+
+    请求接口[POST] 参数:article_id(文章id) 、reply_id(回复评论楼层id)、content（评论内容）
+     `https://URL/api/blog/comment_post`
+    
+    返回参数
+    
+    ```json
+    {
+        "msg": "success",
+        "data": {
+            "article_id": "1",
+            "reply_id": "2",
+            "content": "test",
+            "user_id": 1,
+            "updated_at": "2019-05-06 14:38:14",
+            "created_at": "2019-05-06 14:38:14",
+            "id": 5
+        },
+        "code": 200
+    }
+    
+    ```
+         
+
 - 关于我接口
 
     请求接口[GET]
