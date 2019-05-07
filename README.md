@@ -93,7 +93,12 @@
     ```
  - 评论列表
 
-     请求接口[POST] 参数:id(文章id)
+     请求接口[POST]
+
+     参数:
+
+     - id，文章id
+
       `https://URL/api/blog/comments`
      
      返回参数
@@ -160,7 +165,16 @@
 
 - 发布评论
 
-    请求接口[POST] 参数:article_id(文章id) 、reply_id(回复评论楼层id)、content（评论内容）
+    请求接口[POST] 
+
+    参数:
+
+    - article_id，文章id
+
+    - reply_id ，回复评论楼层id
+
+    - content ，评论内容
+    
      `https://URL/api/blog/comment_post`
     
     返回参数
