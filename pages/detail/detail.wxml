@@ -8,7 +8,7 @@
         <button open-type="getUserInfo" lang="zh_CN"  plain="true" plain="true" bindgetuserinfo="onGetUserInfo" hidden="{{authorization}}" >授权查看评论</button>
     </view>
     
-    <view  hidden="{{commenthidden}}">
+    <view hidden="{{commenthidden}}">
         <view class="comments-content" wx:for="{{comment}}" wx:for-item="item" wx:for-index="index" wx:key="id">
             <view class="user-avatar" >
                 <image class="" src="{{item['avatarUrl']}}" mode="aspectFill" lazy-load="false" binderror="" bindload="" />
@@ -37,12 +37,12 @@
                     </view>
                 </view>   
             </view>
-            <view class="publish-draft">
-                <input class="input" type="text" placeholder="写下你的评论" confirm-type="send" bindinput="trimspace" value="{{content}}"/>
-                <button bindtap="release">发布</button>
-            </view>
+           
         </view>
-       
+        <view class="publish-draft">
+            <input class="input" type="text" placeholder="写下你的评论" confirm-type="send" bindinput="trimspace" />
+            <button bindtap="release">发布</button>
+        </view>
     </view>
     
       

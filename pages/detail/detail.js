@@ -126,7 +126,6 @@ Page({
                 },
                 success(res) {
                     const _data = res.data;
-                    console.log('成功',res);
                     if(_data.code == 200){
                         _this.setData({
                             comment: _data.data.data
@@ -195,7 +194,13 @@ Page({
                 'token': _this.data.token
             },
             success(res) {
-                console.log('评价成功',res)
+                if(res.data.code == 200){
+                    let val = _this.data.comment;
+                    val.push(res.data.data)
+                    _this.setData({
+                        comment: val, 
+                    })
+                }
             },
             fail(res){
                 console.log('评价失败',res)
