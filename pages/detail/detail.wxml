@@ -1,2 +1,49 @@
 <import src="/towxml/entry.wxml"/>
 <template is="entry" data="{{...article}}"/>
+
+<!-- 这是评价模块 -->
+<view class="judge">
+    <view class="judge-switch" hover-class="none" hover-stop-propagation="false">
+        <button class="comments"  plain="true" plain="true" disabled="{{!authorization}}" bindtap="showJudge">{{comment_font}}</button>
+        <button open-type="getUserInfo" lang="zh_CN"  plain="true" plain="true" bindgetuserinfo="onGetUserInfo" hidden="{{authorization}}" >授权查看评论</button>
+    </view>
+    
+    <view  hidden="{{commenthidden}}">
+        <view class="comments-content" wx:for="{{comment}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+            <view class="user-avatar" >
+                <image class="" src="{{item['avatarUrl']}}" mode="aspectFill" lazy-load="false" binderror="" bindload="" />
+            </view>
+            <view class="comments-content-details">
+                <view class="user-name">{{item['nickName']}}</view>
+                <view class="user-content">{{item['content']}}</view>
+                <view class="comment-info">
+                    <view class="comment-info-time">{{item['time']}}</view>
+                    <!-- <view class="">回复</view> -->
+                    <view class="comment-info-like">赞同 {{item['like_count']}}</view>
+                </view>
+
+                <view class="comments-child" wx:if="{{item['reply'].length}}"  wx:for="{{item['reply']}}" wx:for-item="itemReply" wx:key="id">
+                    <view class="user-avatar" >
+                        <image class="" src="{{itemReply['avatarUrl']}}" mode="aspectFill" lazy-load="false" binderror="" bindload="" />
+                    </view>
+                    <view class="comments-content-details">
+                        <view class="user-name">{{itemReply['nickName']}}</view>
+                        <view class="user-content">{{itemReply['content']}}</view>
+                        <view class="comment-info">
+                            <view class="comment-info-time">{{itemReply['time']}}</view>
+                            <!-- <view class="">回复</view> -->
+                            <view class="comment-info-like">赞同 {{itemReply['like_count']}}</view>
+                        </view>
+                    </view>
+                </view>   
+            </view>
+            <view class="publish-draft">
+                <input class="input" type="text" placeholder="写下你的评论" confirm-type="send" bindinput="trimspace" value="{{content}}"/>
+                <button bindtap="release">发布</button>
+            </view>
+        </view>
+       
+    </view>
+    
+      
+</view>
