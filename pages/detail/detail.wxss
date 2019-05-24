@@ -1,3 +1,121 @@
 @import '/towxml/style/main.wxss';
 @import '/towxml/style/theme/light.wxss';
 @import '/towxml/style/theme/dark.wxss';
+
+.judge{
+    margin: 0 40rpx;
+    padding-top: 40rpx;
+}
+.judge-switch{
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 12rpx solid #a1a4a8;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+
+}
+.judge-switch button{
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 0;
+    margin-right: 12rpx;
+    flex: none;
+}
+.publish-draft{
+    padding: 20rpx 40rpx 40rpx;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 34rpx;
+    color: #000;
+    height: 70rpx;
+    width: 670rpx;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 999;
+}
+.publish-draft > .input{
+    height: 50rpx;
+    padding: 10rpx 0 10rpx 14rpx;
+    line-height: 50rpx;
+    border: 1px solid #E4E7ED;
+    margin-right: 14rpx;
+    border-radius: 10rpx;
+    flex: auto;
+}
+.publish-draft  button{
+    flex:none;
+    width: 140rpx;
+    height: 70rpx;
+    padding: 0 30rpx;
+    line-height: 70rpx;
+    text-align: center;
+    margin-right: 10rpx;
+}
+
+.comments-content{
+    padding-top:12rpx;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #b2b2b2;
+}
+.user-avatar{
+    width: 60rpx;
+}
+.user-avatar image{
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 22rpx;
+}
+.user-name{
+    color: #333;
+    font-size: 12pt;
+    font-weight: 400;
+    height: 50rpx;
+}
+.user-content{
+    font-size: 12pt;
+    line-height: 42rpx;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: #505050;
+    padding: 20rpx 0;
+}
+.comments-content-details{
+    flex: 1;
+}
+.comment-info{
+    font-size: 11pt;
+    color: #8a9aa9;
+    height: 50rpx;
+    overflow: hidden
+}
+.comment-info > view{
+    float: right;
+
+}
+.comment-info .comment-info-time{
+    float: left;
+}
+.comment-info-like{
+    margin-right: 12rpx;
+}
+.comments-box{
+    padding-bottom: 130rpx;
+}
+/* ***************** 回复评论************************** */
+.comments-child{
+    display: flex;
+}
+.comments-child .user-avatar{
+    width: 46rpx;
+    text-align: left;
+}
+.comments-child .user-avatar > image{
+    width: 42rpx;
+    height: 42rpx;
+}
