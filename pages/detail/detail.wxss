@@ -104,6 +104,9 @@
 .comment-info-like{
     margin-right: 12rpx;
 }
+.comments-box{
+    padding-bottom: 130rpx;
+}
 /* ***************** 回复评论************************** */
 .comments-child{
     display: flex;

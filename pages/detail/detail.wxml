@@ -4,17 +4,17 @@
 <!-- 这是评价模块 -->
 <view class="judge">
     <view class="judge-switch" hover-class="none" hover-stop-propagation="false">
-        <button class="comments"  plain="true" plain="true" disabled="{{!authorization}}" bindtap="showJudge">{{comment_font}}</button>
-        <button open-type="getUserInfo" lang="zh_CN"  plain="true" plain="true" bindgetuserinfo="onGetUserInfo" hidden="{{authorization}}" >授权查看评论</button>
+        <button class="comments" plain="true" disabled="{{!authorization}}" bindtap="showJudge">{{comment_font}}</button>
+        <button  wx:if="{{!authorization}}" open-type="getUserInfo" lang="zh_CN" plain="true" bindgetuserinfo="onGetUserInfo">授权查看评论</button>
     </view>
     
-    <view hidden="{{commenthidden}}">
+    <view hidden="{{commenthidden}}" class="comments-box">
         <view class="comments-content" wx:for="{{comment}}" wx:for-item="item" wx:for-index="index" wx:key="id">
             <view class="user-avatar" >
-                <image class="" src="{{item['avatarUrl']}}" mode="aspectFill" lazy-load="false" binderror="" bindload="" />
+                <image class="" src="{{item['user']['avatar_url']}}" mode="aspectFill" lazy-load="false" binderror="" bindload="" />
             </view>
             <view class="comments-content-details">
-                <view class="user-name">{{item['nickName']}}</view>
+                <view class="user-name">{{item['user']['nickname']}}</view>
                 <view class="user-content">{{item['content']}}</view>
                 <view class="comment-info">
                     <view class="comment-info-time">{{item['time']}}</view>
@@ -24,10 +24,10 @@
 
                 <view class="comments-child" wx:if="{{item['reply'].length}}"  wx:for="{{item['reply']}}" wx:for-item="itemReply" wx:key="id">
                     <view class="user-avatar" >
-                        <image class="" src="{{itemReply['avatarUrl']}}" mode="aspectFill" lazy-load="false" binderror="" bindload="" />
+                        <image class="" src="{{itemReply['user']['avatar_url']}}" mode="aspectFill" lazy-load="false" binderror="" bindload="" />
                     </view>
                     <view class="comments-content-details">
-                        <view class="user-name">{{itemReply['nickName']}}</view>
+                        <view class="user-name">{{itemReply['user']['nickname']}}</view>
                         <view class="user-content">{{itemReply['content']}}</view>
                         <view class="comment-info">
                             <view class="comment-info-time">{{itemReply['time']}}</view>
@@ -40,7 +40,7 @@
            
         </view>
         <view class="publish-draft">
-            <input class="input" type="text" placeholder="写下你的评论" confirm-type="send" bindinput="trimspace" />
+            <input class="input" type="text" placeholder="写下你的评论" confirm-type="send" bindblur="trimspace" value="{{content}}" />
             <button bindtap="release">发布</button>
         </view>
     </view>

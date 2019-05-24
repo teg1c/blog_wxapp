@@ -196,9 +196,10 @@ Page({
             success(res) {
                 if(res.data.code == 200){
                     let val = _this.data.comment;
-                    val.push(res.data.data)
+                    val.unshift(res.data.data)
                     _this.setData({
-                        comment: val, 
+                        comment: val,
+                        content: '', //清空评论内容
                     })
                 }
             },
@@ -209,7 +210,7 @@ Page({
     },
     trimspace: function(e){ //输入框禁止输入空格
         this.setData({
-            content: e.detail.value
+            content: e.detail.value.trim()
             // content: e.detail.value.replace(/\s+/g, '')
         })
     },
